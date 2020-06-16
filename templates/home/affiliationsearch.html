@@ -1,0 +1,29 @@
+<hr>
+<div class="container marketing">
+{% if results %}
+    {% for row in results %}
+    <div class="posts">
+        <h1 class="content-subhead">{{row.affiliationid}}</h1>
+        <!-- A single blog post -->
+        <section class="post">
+            <header class="post-header">
+                <div class="post-avatar">
+                <button class="ant-btn ant-btn-primary" type="button" onclick='save({{row}})'>Collect</button>
+                </div>
+                <h2 class="post-title">{{row.name}}</h2>
+            </header>
+
+            <div class="post-description">
+                <p>
+                <a class="post-category post-category-pure" href="">Country</a>&emsp;{{row.country}}
+                <br>
+                <a class="post-category" href="#">Introduction</a>&emsp;{% if row.introduction %}{{row.introduction}}{% else %}No Introduction{% endif %}
+                </p>
+            </div>
+        </section>
+    </div>
+    {% endfor %}
+
+{% else %}
+    None
+{% endif %}

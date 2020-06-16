@@ -1,0 +1,28 @@
+<hr class="featurette-divider">
+<div class="container marketing">
+    <div class="posts">
+        {% if papers %}
+            <h1 class="content-subhead">Paper Collect</h1>
+            <tbody>
+                {% for pa in papers %}
+                    <section class="post">
+                        <header class="post-header">
+                            <h2 class="post-title">{{pa.title}}</h2>
+                            <p class="post-meta">
+                                {% for au in pa.authors %}
+                                    <a class="post-category post-category-design" href="#">{{au}}</a>
+                                {% endfor %}
+                                <a class="post-category post-category-pure" href="#">{{pa.year}}</a>
+                            </p>
+                        </header>
+                        <div class="post-description">
+                            <p>{% if pa.abstract %}{{pa.abstract|truncatewords:100}} {% else %}None Abstract{% endif %}</p>
+                        </div>
+                    </section>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <h1 class="content-subhead">You Haven't Collect Any Paper</h1>
+        {% endif %}
+    </div>
+</div>

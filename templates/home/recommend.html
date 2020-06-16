@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% block title %}Recommend{% endblock %}
+{% load static %}
+{% block script %}
+  <script src="{% static 'js/echarts.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <main role="main">
+    <hr class="featurette-divider">
+      <div class="container">
+        <div class="row mb-2">
+          {% for school in schools %}
+            <div class="col-md-6">
+              <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">{{forloop.counter}}</strong>
+                  <h3 class="mb-0">{{school.name}}</h3>
+                  <div class="mb-1 text-muted">{{school.country}}</div>
+                  <a href="/result/?short={{school.short}}" class="stretched-link">View Recommend</a>
+                </div>
+            
+                <div class="col-auto d-none d-lg-block">
+                  <svg class="bd-placeholder-img" width="120" height="120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                    {% with 'images/'|add:school.short|add:'.png' as img %}
+                      <img width="120" height="120" src="{% static img %}">
+                    {% endwith %}
+                  </svg>
+                </div>
+              
+                <p class="container">{{school.introduction|truncatewords:50}}</p>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    <hr class="featurette-divider">
+
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </main>
+
+  
+
+{% endblock %}

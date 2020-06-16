@@ -1,0 +1,64 @@
+{% extends 'login/base.html' %}
+{% load static %}
+{% block title %}Regist{% endblock %}
+{% block script%}<script src="{% static 'js/register.js' %}"></script>{% endblock %}
+{% block content %}
+
+<table bgcolor="white" class="pos_abs" width="25%">
+        <tr>
+        <th style="width: 30%"></th>
+        <th></th>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td frame="below"><input type="text" id="username" name="account" placeholder="Username" size="20" class="text" ></td>
+            
+        </tr>
+        
+        <tr>
+        <td></td>
+        <td class="user_error errorTxt"></td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td ><input id="password" type="password"  name="password" placeholder="Password" size="20" class="text"></span></td>
+            
+        </tr>
+        
+        <tr>
+        <td></td>
+        <td class="psw_error errorTxt"></td>
+        </tr>
+        
+        <tr>
+            <td>Confirm Password</td>
+            <td ><input id="resurepassword" type="password"  name="resurepassword" placeholder="ResurePassword" size="20" class="text"></span></td>
+            
+        </tr>
+        
+        <tr>
+        <td></td>
+        <td class="conf_error errorTxt"></td>
+        </tr>
+        
+        <tr>
+            <td align="right">
+                
+            <div id="login_click">
+
+            <a id="register">Regist</a>
+
+            </div>
+            </td>
+            <td align="center">
+                <a href="/login/">Return To Login</a>
+            </td>
+        </tr>
+        
+        <tr>
+        <td></td>
+        <td class="register_error errorTxt"></td>
+        </tr>
+</table>
+{% endblock %}

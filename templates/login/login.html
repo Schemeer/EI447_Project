@@ -1,0 +1,30 @@
+{% extends 'login/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block script%}<script src="{% static 'js/login.js' %}"></script>{% endblock %}
+{% block content %}
+<table bgcolor="white" class="pos_abs" width="20%">
+    <tr>
+        <th style="width: 30%"></th>
+        <th></th>
+    </tr>
+    <tr>
+    <td>User Name</td>
+    <td frame="below"><input type="text" id="username" name="account" placeholder="Username" size="20" class="text" ></td>
+
+    </tr>
+
+    <tr>
+    <td>Password</td>
+    <td ><input id="password" type="password"  name="password" placeholder="Password" size="20" class="text"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="login-error errorTxt"></td>
+        </tr>
+    <tr>
+        <td align="center"><div id="login_click"><a id="login">Login</a></div></td>
+        <td align="center"><a href="/register/">No Account？</a></td>
+    </tr>
+</table>
+{% endblock %}

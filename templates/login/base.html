@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}base{% endblock %}</title>
+        <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+        <link href="{% static 'plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        {% block script %}{% endblock %}
+        {% block css %}<link rel="stylesheet" href="{% static 'css/login_base.css' %}">{% endblock %}
+    </head>
+    <body background="{% static 'images/home.jpg' %}" width="1918" height="901">
+            {% block content %}{% endblock %}
+          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+          <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+          <script src="{% static 'js/ajaxpost.js' %}"></script>
+          <!-- Include all compiled plugins (below), or include individual files as needed -->
+          <script src="{% static 'plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

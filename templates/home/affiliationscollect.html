@@ -1,0 +1,26 @@
+<hr class="featurette-divider">
+<div class="container marketing">
+    <div class="posts">
+        {% if affiliations %}
+            <h1 class="content-subhead">Affiliation Collect</h1>
+            <tbody>
+                {% for af in affiliations %}
+                    <section class="post">
+                        <header class="post-header">
+                            <h2 class="post-title">{{af.name}}</h2>
+                            <p class="post-meta">
+                              <a class="post-category post-category-design" href="#">{{af.country}}</a>
+                              <a class="post-category post-category-pure" href="{{af.url}}">View</a>
+                            </p>
+                        </header>
+                        <div class="post-description">
+                            <p>{{af.introduction|truncatewords:100}}</p>
+                        </div>
+                    </section>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <h1 class="content-subhead">You Haven't Collect Any Affiliations</h1>
+        {% endif %}
+    </div>
+</div>
